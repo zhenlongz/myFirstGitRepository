@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+    maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation 'org.springframework.cloud:spring-cloud-starter-gateway:3.0.3'
+}
+
+test {
+    useJUnitPlatform()
+}

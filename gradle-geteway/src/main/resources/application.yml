@@ -1,0 +1,17 @@
+server:
+  port: 8500
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: http://localhost:8501/
+          predicates:
+            - Path=/user/**
+          filters:
+            - AddRequestParameter=company,pingan
+            - AddRequestHeader=token,zhangsan
+
